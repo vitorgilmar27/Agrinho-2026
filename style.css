@@ -1,1 +1,259 @@
+/* --- Reset & Variáveis --- */
+:root {
+  --bg-primary: #0f172a;
+  --bg-card: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  
+  --accent-rural: #10b981;
+  --accent-rural-glow: rgba(16, 185, 129, 0.15);
+  
+  --accent-urban: #0ea5e9;
+  --accent-urban-glow: rgba(14, 165, 233, 0.15);
+  
+  --font-family: 'Inter', sans-serif;
+  --border-radius: 16px;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* --- Barra Lateral de Navegação (Sidebar) --- */
+.sidebar {
+  background-color: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-main);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* --- Área Principal (Dashboard) --- */
+.main-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* --- Hero Banner --- */
+.hero-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 48px;
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-rural);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero-card h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 750px;
+}
+
+/* --- Grid de Pilares --- */
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  padding: 32px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-rural:hover {
+  border-color: var(--accent-rural);
+  box-shadow: 0 10px 30px var(--accent-rural-glow);
+}
+
+.card-urban:hover {
+  border-color: var(--accent-urban);
+  box-shadow: 0 10px 30px var(--accent-urban-glow);
+}
+
+.card-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-rural .card-tag { color: var(--accent-rural); }
+.card-urban .card-tag { color: var(--accent-urban); }
+
+.card-header h2 {
+  font-size: 1.5rem;
+  margin: 8px 0 12px 0;
+  color: var(--text-main);
+}
+
+.card-intro {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 16px;
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature-list li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.feature-list strong {
+  color: var(--text-main);
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* --- Banner de Síntese --- */
+.synthesis-banner {
+  background: linear-gradient(90deg, #064e3b, #0369a1);
+  padding: 36px;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.synthesis-banner h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.synthesis-banner p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+}
+
+/* --- Rodapé --- */
+.app-footer {
+  text-align: center;
+  padding: 24px 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Responsividade para Dispositivos Móveis --- */
+@media (max-width: 850px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    height: auto;
+    position: relative;
+    padding: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-menu {
+    flex-direction: row;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .hero-card {
+    padding: 28px;
+  }
+
+  .hero-card h1 {
+    font-size: 1.8rem;
+  }
+}
